@@ -1,3 +1,17 @@
+# nilcons/jbig2enc-static
+
+The only addition here compared to upstream
+https://github.com/agl/jbig2enc is that we have a `compile-static.sh`
+script, that uses docker and Debian to compile a jbig2enc binary, that
+is almost static: it only dynamically loads the basic libraries (libc,
+libm, libpthread, libdl) with a very stable and forward compatible ABI.
+
+If you compile yourself a binary like this, it will be good to go for
+years.  We also commit occasionally into the repository a compiled
+binary, you can use this at your own risk.
+
+# Original README
+
 This is an encoder for [JBIG2](fcd14492.pdf).
 
 JBIG2 encodes bi-level (1 bpp) images using a number of clever tricks to get
